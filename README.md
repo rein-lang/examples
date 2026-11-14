@@ -1,6 +1,6 @@
 # Examples
 
-This folder acts like a repo. Its `rein/` folder holds the example programs, one folder per program, each with a `rein.json` manifest.
+This repo holds example Rein programs. The [rein](https://github.com/rein-lang/rein) tests use it as a submodule. Its `rein/` folder holds the example programs, one folder per program, each with a `rein.json` manifest.
 
 - [merge-pr](rein/merge-pr): checks a pull request and picks the next step. Shows a retry that starts the program again.
 - [incident-triage](rein/incident-triage): route a production alert to a page, a runbook, or a ticket.
@@ -11,7 +11,7 @@ This folder acts like a repo. Its `rein/` folder holds the example programs, one
 Run `rein list` from here to list them:
 
 ```sh
-cd examples
+cd examples  # this repo root
 rein list
 rein run support-ticket
 ```
