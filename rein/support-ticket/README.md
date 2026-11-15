@@ -1,8 +1,8 @@
 # support-ticket
 
-A customer support agent flow. It decides how to answer a customer ticket.
+A customer support agent process. It decides how to answer a customer ticket.
 
-The flow routes VIP customers to a human first. Other tickets follow their category. Billing tickets can end in a refund. How-to tickets get a help article when one matches. The agent answers whether the article solved the problem, then the flow closes the ticket or escalates it.
+The process routes VIP customers to a human first. Other tickets follow their category. Billing tickets can end in a refund. How-to tickets get a help article when one matches. The agent answers whether the article solved the problem, then the process closes the ticket or escalates it.
 
 ## Files
 

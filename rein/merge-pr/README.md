@@ -1,6 +1,6 @@
 # merge-pr
 
-An agent flow that decides whether a pull request can merge.
+An agent process that decides whether a pull request can merge.
 
 ## Files
 
