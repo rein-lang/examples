@@ -1,8 +1,8 @@
 # incident-triage
 
-An on-call agent flow. It decides how to handle a new production alert.
+An on-call agent process. It decides how to handle a new production alert.
 
-The flow asks three questions: how severe the alert is, whether customers feel it, and whether a runbook exists. Then it picks one of three outcomes: page a human, follow the runbook, or open a ticket.
+The process asks three questions: how severe the alert is, whether customers feel it, and whether a runbook exists. Then it picks one of three outcomes: page a human, follow the runbook, or open a ticket.
 
 ## Files
 
