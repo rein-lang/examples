@@ -1,6 +1,6 @@
 import { fixCi } from "./ci/fix";
 import { addressComments } from "./comments/address";
-import { review } from "./review";
+import { review as openReview } from "./review";
 
 interface Input {
   /** The link of the pull request to merge. */
@@ -33,7 +33,7 @@ export default function merge({ pr, ci, conflicts, review }: Input) {
         case "changes requested":
           return addressComments(pr=pr);
         case "no review":
-          return review(pr=pr);
+          return openReview(pr=pr);
       }
   }
 }
