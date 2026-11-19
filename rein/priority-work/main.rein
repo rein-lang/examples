@@ -1,3 +1,6 @@
+import { findProjects } from "./find_projects";
+import { openPrs } from "./open_prs";
+
 interface Projects {
   /**
    * The high priority repositories (`owner/name`), comma-separated,
@@ -16,11 +19,11 @@ export default async function main(
   workplace: string,
 ) {
   /** The high priority repositories. */
-  const projects: Projects = await @./find_projects(workplace=workplace);
+  const projects: Projects = await findProjects(workplace=workplace);
 
   if (projects.none) {
     return `No priority project has activity.`;
   }
 
-  return @./open_prs(repos=projects.repos);
+  return openPrs(repos=projects.repos);
 }

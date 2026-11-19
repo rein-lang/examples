@@ -1,3 +1,6 @@
+import { escalate } from "./escalate";
+import { tellCustomer } from "./refund/tell_customer";
+
 /**
  * Process a refund request from a billing ticket.
  */
@@ -6,10 +9,10 @@ export default function refund(
   refund_over_limit: boolean,
 ) {
   if (refund_over_limit) {
-    return @./escalate;
+    return escalate;
   }
 
-  return @./refund/tell_customer(
+  return tellCustomer(
     opening=`Refund the amount the customer asked for and confirm it in the
     ticket.`,
     next_step=`Then tell the customer the refund takes 5 business days.`,

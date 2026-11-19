@@ -1,3 +1,5 @@
+import { postReview } from "./post_review";
+
 /**
  * Review a pull request for security problems.
  * Request changes when one is found, else approve.
@@ -13,10 +15,10 @@ export default async function securityReview(
   );
 
   if (security_problem) {
-    return @./post_review(kind=`request changes`,
+    return postReview(kind=`request changes`,
       body=`each security problem, with its file and line`, pr=pr);
   }
 
-  return @./post_review(kind=`approve`,
+  return postReview(kind=`approve`,
     body=`the security checks you made`, pr=pr);
 }

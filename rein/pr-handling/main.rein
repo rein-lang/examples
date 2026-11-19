@@ -1,3 +1,8 @@
+import { review } from "./review";
+import { addressComments } from "./comments/address";
+import { fixCi } from "./ci/fix";
+import { merge } from "./merge";
+
 interface Input {
   /** The link of the pull request to handle. */
   pr: string;
@@ -18,12 +23,12 @@ export default function main({ pr, draft, task }: Input) {
 
   switch (task) {
     case "review":
-      return @./review(pr=pr);
+      return review(pr=pr);
     case "address comments":
-      return @./comments/address(pr=pr);
+      return addressComments(pr=pr);
     case "fix ci":
-      return @./ci/fix(pr=pr);
+      return fixCi(pr=pr);
     case "merge":
-      return @./merge(pr=pr);
+      return merge(pr=pr);
   }
 }

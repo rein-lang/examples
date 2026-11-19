@@ -1,5 +1,8 @@
 // merge_pr.rein
 
+import { reviewCode } from "./merge_pr/review_code";
+import { fixCi } from "./merge_pr/fix";
+
 interface Input {
   /** Does the PR change only documentation files? */
   docs_only: boolean;
@@ -17,9 +20,9 @@ export default function mergePr({ docs_only, ci }: Input) {
 
   switch (ci) {
     case "green":
-      return @./merge_pr/review_code;
+      return reviewCode;
     case "red":
-      return @./merge_pr/fix;
+      return fixCi;
     case "pending":
       return `wait for CI, then run merge_pr again`;
   }

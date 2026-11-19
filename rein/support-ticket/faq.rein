@@ -1,3 +1,6 @@
+import { escalate } from "./escalate";
+import { closeTicket } from "./faq/close_ticket";
+
 /**
  * Answer a how-to question from the help center.
  */
@@ -6,7 +9,7 @@ export default async function answerFaq(
   article_found: boolean,
 ) {
   if (!article_found) {
-    return @./escalate;
+    return escalate;
   }
 
   /** Did the customer confirm the article solved the problem? */
@@ -16,11 +19,11 @@ export default async function answerFaq(
   );
 
   if (solved) {
-    return @./faq/close_ticket(
+    return closeTicket(
       opening=`Glad the help article solved the problem.`,
       next_step=`Reply to this ticket if it comes back.`,
     );
   }
 
-  return @./escalate;
+  return escalate;
 }

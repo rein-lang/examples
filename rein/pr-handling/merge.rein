@@ -1,3 +1,7 @@
+import { fixCi } from "./ci/fix";
+import { addressComments } from "./comments/address";
+import { review } from "./review";
+
 interface Input {
   /** The link of the pull request to merge. */
   pr: string;
@@ -15,7 +19,7 @@ interface Input {
 export default function merge({ pr, ci, conflicts, review }: Input) {
   switch (ci) {
     case "red":
-      return @./ci/fix(pr=pr);
+      return fixCi(pr=pr);
     case "pending":
       return `Wait for CI to finish on ${pr}. Then start this program again.`;
     case "green":
@@ -27,9 +31,9 @@ export default function merge({ pr, ci, conflicts, review }: Input) {
         case "approved":
           return `Merge the pull request ${pr}. Then delete its branch.`;
         case "changes requested":
-          return @./comments/address(pr=pr);
+          return addressComments(pr=pr);
         case "no review":
-          return @./review(pr=pr);
+          return review(pr=pr);
       }
   }
 }
