@@ -1,3 +1,6 @@
+import { mergePr } from "./merge_pr";
+import { securityReview } from "./review";
+
 /**
  * Decide the next step for a pull request task.
  */
@@ -7,8 +10,8 @@ export default function main(
 ) {
   switch (task) {
     case "merge":
-      return @./merge_pr;
+      return mergePr;
     case "security review":
-      return @./review;
+      return securityReview;
   }
 }

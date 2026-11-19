@@ -1,3 +1,6 @@
+import { securityReview } from "./review/security_review";
+import { postReview } from "./review/post_review";
+
 interface Input {
   /** The link of the pull request to review. */
   pr: string;
@@ -20,7 +23,7 @@ export default async function review(
   }
 
   if (security_sensitive) {
-    return @./review/security_review(pr=pr);
+    return securityReview(pr=pr);
   }
 
   /** What is the result of the code review? */
@@ -31,13 +34,13 @@ export default async function review(
     );
   switch (verdict) {
     case "clean":
-      return @./review/post_review(kind=`approve`,
+      return postReview(kind=`approve`,
         body=`one line on what you checked`, pr=pr);
     case "small problems":
-      return @./review/post_review(kind=`comment`,
+      return postReview(kind=`comment`,
         body=`each small problem, with its file and line`, pr=pr);
     case "blocking problems":
-      return @./review/post_review(kind=`request changes`,
+      return postReview(kind=`request changes`,
         body=`each blocking problem, with its file and line`, pr=pr);
   }
 }

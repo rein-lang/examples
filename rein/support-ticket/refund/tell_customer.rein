@@ -1,6 +1,8 @@
+import { Message } from "../message.struct";
+
 /**
  * Tell the customer what happens next, in one sentence.
  */
-export default function tellCustomer({ opening, next_step }: @../message) {
+export default function tellCustomer({ opening, next_step }: Message) {
   return `${opening} ${next_step}`;
 }

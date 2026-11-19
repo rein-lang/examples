@@ -1,3 +1,5 @@
+import { pageHuman } from "./page_human";
+
 /**
  * Follow the runbook for an alert that has one.
  */
@@ -12,5 +14,5 @@ export default async function followRunbook() {
     return `Close the alert. Write a one-line note with the steps you ran.`;
   }
 
-  return @./page_human;
+  return pageHuman;
 }

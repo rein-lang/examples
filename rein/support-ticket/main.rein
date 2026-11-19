@@ -1,3 +1,7 @@
+import { escalate } from "./escalate";
+import { refund } from "./refund";
+import { answerFaq } from "./faq";
+
 interface Ticket {
   /** What category best fits the ticket? */
   category: "billing" | "account" | "how_to";
@@ -10,15 +14,15 @@ interface Ticket {
  */
 export default function main({ category, vip }: Ticket) {
   if (vip) {
-    return @./escalate;
+    return escalate;
   }
 
   switch (category) {
     case "billing":
-      return @./refund;
+      return refund;
     case "account":
-      return @./escalate;
+      return escalate;
     case "how_to":
-      return @./faq;
+      return answerFaq;
   }
 }

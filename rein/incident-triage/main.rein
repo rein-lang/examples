@@ -1,3 +1,7 @@
+import { pageHuman } from "./page_human";
+import { followRunbook } from "./follow";
+import { openTicket } from "./open";
+
 interface Alert {
   /** How severe is the alert? */
   severity: "sev1" | "sev2" | "sev3";
@@ -16,18 +20,18 @@ export default function main({
   known_runbook,
 }: Alert) {
   if (customer_impact) {
-    return @./page_human;
+    return pageHuman;
   }
 
   switch (severity) {
     case "sev1":
-      return @./page_human;
+      return pageHuman;
     case "sev2":
     case "sev3":
       if (known_runbook) {
-        return @./follow;
+        return followRunbook;
       }
 
-      return @./open;
+      return openTicket;
   }
 }
