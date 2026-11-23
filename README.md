@@ -1,6 +1,6 @@
 # Examples
 
-This repo holds example Rein programs. The [rein](https://github.com/rein-lang/rein) tests use it as a submodule. Its `rein/` folder holds the example programs, one folder per program, each with a `rein.json` manifest.
+This repo holds example Rein programs. Each example is a small app an agent can run. Each one teaches one part of Rein, as the list below shows. The [rein](https://github.com/rein-lang/rein) tests use it as a submodule. Its `rein/` folder holds the example programs, one folder per program, each with a `rein.json` manifest.
 
 Each example has a page on the docs site: [rein-lang.com/docs/examples](https://rein-lang.com/docs/examples/). Read more about Rein at [rein-lang.com](https://rein-lang.com).
 
